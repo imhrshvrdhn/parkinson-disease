@@ -50,5 +50,5 @@ def predict_parkinson():
         
     return render_template('index.html', result=result)
 
-if _name=='main_':
+if __name__=='__main__':
     app.run(debug=True)
