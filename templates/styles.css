@@ -1,251 +1,73 @@
-
-body {
-    /* background-image: url('https://www.vanraam.com/getmedia/3078b293-12dd-4a5b-8bdf-028ee835bdcc/Cycling-with-Parkinson-s-disease-with-Van-Raam-special-needs-bicycles.png?width=1200'); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color:#acc5bb ;
-    text-align: block;
-    padding: 0px;
+*{
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
-.column {
+
+
+h3{
+    text-align: center;
+    margin-bottom: -20px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background: #d5dde6;
+}
+.inputBox{
+    position: relative;
+    width: 250px;
+}
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(177, 11, 11, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+}
+div.column {
     float: left;
     width: 25%;
-  }
-  
-  /* Clear floats after the columns */
+    padding :20px;
+    margin-right: 85px;
+
+  } 
+
   .row:after {
     content: "";
     display: table;
     clear: both;
-  }
-#research {
-    font-size: 18px;
-    width: 100px;
-    height: 23px;
-    top: 23px;
-}
+  } 
 
-#box {
-    border-radius: 60px;
-    border-color: 45px;
-    border-style: solid;
-    font-family: cursive;
-    text-align: center;
-    background-color: rgb(168, 131, 61);
-    font-size: medium;
-    position: absolute;
-    width: 700px;
-    bottom: 9%;
-    height: 850px;
-    right: 30%;
-    padding: 0px;
-    margin: 0px;
-    font-size: 14px;
-}
 
-#fuel {
-    width: 83px;
-    height: 43px;
-    text-align: center;
+.in
+{
     border-radius: 14px;
+    height: 25px;
     font-size: 20px;
-}
-
-#fuel:hover {
-    background-color: coral;
-}
-
-#research {
-    width: 99px;
-    height: 43px;
     text-align: center;
-    border-radius: 14px;
-    font-size: 18px;
 }
-
-#research:hover {
-    background-color: coral;
-}
-
-#resea {
-    width: 99px;
-    height: 43px;
-    text-align: center;
-    border-radius: 14px;
-    font-size: 18px;
-}
-
-#resea:hover {
-    background-color: coral;
-}
-
 #sub {
     width: 200px;
-    height: 60px;
-    color: rgb(255, 72, 0); 
+    height: 60px; 
+    color: white;
+    background-color: rgb(10, 3, 3); 
     border: 5px; 
     font-size: 35px;
     border-radius: 14px;
     position: absolute;
-    left: 920px;
-    top: 640px;
-}
 
-#sub:hover {
+            left: 720px;
+            top: 770px;
+}
+ #sub:hover {
     background-color: rgb(114, 164, 177);
     color: rgb(2, 2, 2);
-}
-
-#first {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#second {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#third {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#fourth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#fifth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#sixth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#seventh {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#eighth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#ninth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#tenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#eleventh {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#twelth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#thirteenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#forteenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#fifteenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#sixteenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#seventeenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#eighteenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#ninteenth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#twentyth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#twentyoneth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#twentytwoth {
-    border-radius: 14px;
-    height: 25px;
-    font-size: 20px;
-    text-align: center;
-}
+} 
