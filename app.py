@@ -1,56 +1,54 @@
-import numpy as numpy
-from flask import flask, request, jsonify, render_template
+import numpy as np
+from flask import Flask, request, jsonify, render_template
 import requests
 import sklearn
 import pickle
+import decimal
 from sklearn.preprocessing import MinMaxScaler
-app = Flask(__name__)
-model32 = pickle.load(open('parkinson_model32.pkl', 'rb'))
-@app.route('/', methods=['GET'])
-def Home():
+
+app = Flask(_name_)
+
+model32 = pickle.load(open('parkinson_model32.pkl','rb'))
+@app.route('/')
+def index():
     return render_template('index.html')
 
-
 scaler = MinMaxScaler()
-@app.route("/predict", methods=['POST'])
-def predict():
-    if request.method == 'POST':
-        feature_1 = float(request.form['MDVP:Fo(Hz)'])
-        feature_2 = float(request.form['MDVP:Fhi(Hz)'])
-        feature_3 = float(request.form['MDVP:Flo(Hz)'])
-        feature_4 = float(request.form['MDVP:Jitter(%)'])
-        feature_5 = float(request.form['MDVP:Jitter(Abs)'])
-        feature_6 = float(request.form['MDVP:RAP'])
-        feature_7 = float(request.form['MDVP:PPQ'])
-        feature_8 = float(request.form['Jitter:DDP'])
-        feature_9 = float(request.form['MDVP:Shimmer'])
-        feature_10 = float(request.form['MDVP:Shimmer(dB)'])
-        feature_11 = float(request.form['Shimmer:APQ3'])
-        feature_12 = float(request.form['Shimmer:APQ5'])
-        feature_13 = float(request.form['MDVP:APQ'])
-        feature_14 = float(request.form['Shimmer:DDA'])
-        feature_15 = float(request.form['NHR'])
-        feature_16 = float(request.form['HNR'])
-        feature_17 = float(request.form['RPDE'])
-        feature_18 = float(request.form['DFA'])
-        feature_19 = float(request.form['spread1'])
-        feature_20 = float(request.form['spread2'])
-        feature_21 = float(request.form['D2'])
-        feature_22 = float(request.form['PPE'])
+@app.route('/predict', methods=['POST'])
+def predict_parkinson():
+    feature1 = decimal.Decimal(request.form.get('MDVP:Fo(Hz)'))
+    feature2 = decimal.Decimal(request.form.get('MDVP:Fhi(Hz)'))
+    feature3 = decimal.Decimal(request.form.get('MDVP:Flo(Hz)'))
+    feature4 = decimal.Decimal(request.form.get('MDVP:Jitter(%)'))
+    feature5 = decimal.Decimal(request.form.get('MDVP:Jitter(Abs)'))
+    feature6 = decimal.Decimal(request.form.get('MDVP:RAP'))
+    feature7 = decimal.Decimal(request.form.get('MDVP:PPQ'))
+    feature8 = decimal.Decimal(request.form.get('Jitter:DDP'))
+    feature9 = decimal.Decimal(request.form.get('MDVP:Shimmer'))
+    feature10 = decimal.Decimal(request.form.get('MDVP:Shimmer(dB)'))
+    feature11 = decimal.Decimal(request.form.get('Shimmer:APQ3'))
+    feature12 = decimal.Decimal(request.form.get('Shimmer:APQ5'))
+    feature13 = decimal.Decimal(request.form.get('MDVP:APQ'))
+    feature14 = decimal.Decimal(request.form.get('Shimmer:DDA'))
+    feature15 = decimal.Decimal(request.form.get('NHR'))
+    feature16 = decimal.Decimal(request.form.get('HNR'))
+    feature17 = decimal.Decimal(request.form.get('RPDE'))
+    feature18 = decimal.Decimal(request.form.get('DFA'))
+    feature19 = decimal.Decimal(request.form.get('spread1'))
+    feature20 = decimal.Decimal(request.form.get('spread2'))
+    feature21 = decimal.Decimal(request.form.get('D2'))
+    feature22 = decimal.Decimal(request.form.get('PPE'))
 
-        values = np.array([[feature_1, feature_2, feature_3, feature_4, feature_5, feature_6, feature_7, feature_8, feature_9, feature_10, feature_11, feature_12, feature_13, feature_14, feature_15, feature_16, feature_17, feature_18, feature_19, feature_20, feature_21, feature_22]])
+    values = np.array([[feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11, feature12, feature13, feature14, feature15, feature16, feature17, feature18, feature19, feature20, feature21, feature22]])
 
-        result = model32.predict(values)
+    result = model32.predict(values)
 
-        if result==1:
-            return render_template('index.html', prediction_text='positive report') 
-
-        else:
-            return render_template('index.html', prediction_text='negative report')
-
+    if result[0]==1:
+        result = 'Positive Report' 
     else:
-        return render_template('index.html')
+        result = 'Negative Report'
+        
+    return render_template('index.html', result=result)
 
-
-if __name__=="__main__":
+if _name=='main_':
     app.run(debug=True)
