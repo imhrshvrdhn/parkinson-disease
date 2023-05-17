@@ -13,7 +13,7 @@
 
     <div>
 
-        <form action="{{url_for('predict')}}" method="post">
+        <form action="/predict" method="post">
             <h2 style=" font-size: 300%;text-align: center; background-attachment: fixed;"> Parkinson Disease Detection </h2>
 
             <div class="row">
@@ -103,6 +103,11 @@
                     <br>
                     <br>
                     <br>
+        {% if result %}
+        <br>
+        <h1> {{result}} </h1>
+        <br>
+        {% endif %}
     </div>
 
 
