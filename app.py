@@ -6,7 +6,7 @@ import pickle
 import decimal
 from sklearn.preprocessing import MinMaxScaler
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 model32 = pickle.load(open('parkinson_model32.pkl','rb'))
 @app.route('/')
